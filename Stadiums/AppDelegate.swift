@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        testCoreData()
         return true
     }
 
@@ -76,6 +77,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+
+    func fetchStadiums() {
+        StadiumAPI.fetchStadiums { stadiums in
+            print("Fetched \(stadiums.count) stadiums:")
+            for stadium in stadiums {
+                print("- Title: \(stadium.title)")
+                print("  ID: \(stadium.id)")
+                print("  Geo Coordinates: \(stadium.geocoordinates)")
+                print("  Image URL: \(stadium.image)")
+                print("  Latitude: \(stadium.latitude)")
+                print("  Longitude: \(stadium.longitude)")
+            }
+        }
+    }
+    
+    func testCoreData() {
+        let coreDataManager = CoreDataManager(modelName: "Stadiums")
+
+        // Fetch stadiums from Core Data if available
+        if let stadiums = coreDataManager.fetchStadiums(), !stadiums.isEmpty {
+            for stadium in stadiums {
+                print("ID: \(stadium.id)")
+                print("Title: \(stadium.title)")
+                print("Geo-coordinates: \(stadium.geocoordinates)")
+                print("Image URL: \(stadium.image)")
+            }
+        } else {
+            // Fetch stadiums from API if device is connected to network
+            if NetworkReachability.isConnected() {
+                StadiumAPI.fetchStadiums { stadiums in
+                    coreDataManager.saveStadiums(stadiums)
+                    print("Stadiums fetched from API and saved to Core Data:")
+                    for stadium in stadiums {
+                        print("ID: \(stadium.id)")
+                        print("Title: \(stadium.title)")
+                        print("Geo-coordinates: \(stadium.geocoordinates)")
+                        print("Image URL: \(stadium.image)")
+                    }
+                }
+            } else {
+                print("Device is not connected to network.")
+            }
+        }
+    }
+
+
+
+
+
+
+
 
 }
 

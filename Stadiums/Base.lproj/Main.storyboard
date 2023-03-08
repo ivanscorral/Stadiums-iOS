@@ -1,24 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Stadium List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StadiumListViewController" customModule="Stadiums" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="gT1-nk-Zik">
+                                <rect key="frame" x="0.0" y="404" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKH-az-qI0">
+                                <rect key="frame" x="0.0" y="47" width="393" height="44"/>
+                                <items>
+                                    <navigationItem title="Stadiums" id="fgW-KD-dq1"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8w7-aO-bUR">
+                                <rect key="frame" x="0.0" y="135" width="393" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="717" id="ncX-qn-LDB"/>
+                                </constraints>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HmW-GA-r4c">
+                                <rect key="frame" x="0.0" y="91" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xED-Sk-HIA"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ENg-aQ-Axo"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8w7-aO-bUR" secondAttribute="trailing" id="04K-q6-Sc4"/>
+                            <constraint firstItem="HmW-GA-r4c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0u4-bg-kX2"/>
+                            <constraint firstItem="BKH-az-qI0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="47" id="HGr-ov-LPT"/>
+                            <constraint firstItem="HmW-GA-r4c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PYF-5a-Kea"/>
+                            <constraint firstItem="HmW-GA-r4c" firstAttribute="top" secondItem="BKH-az-qI0" secondAttribute="bottom" id="Tko-9J-jDM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8w7-aO-bUR" secondAttribute="bottom" constant="-34" id="Tm8-qW-U0M"/>
+                            <constraint firstItem="8w7-aO-bUR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ePw-YN-QeE"/>
+                            <constraint firstItem="BKH-az-qI0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hOr-f6-jZo"/>
+                            <constraint firstItem="BKH-az-qI0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o5J-RQ-LLE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="gT1-nk-Zik" id="Szd-pS-H2N"/>
+                        <outlet property="navigationBar" destination="BKH-az-qI0" id="DdG-1e-WH2"/>
+                        <outlet property="searchBar" destination="HmW-GA-r4c" id="0n4-dt-jxv"/>
+                        <outlet property="tableView" destination="8w7-aO-bUR" id="ttA-5i-7AO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

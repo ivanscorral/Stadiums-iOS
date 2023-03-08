@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "AA22F07D-1954-49A6-895F-AAD577ABA055"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF9FCF0E-BE35-40F3-A700-ECDE7F612C67"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stadiums/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "fetchStadiums()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AF9FCF0E-BE35-40F3-A700-ECDE7F612C67 - 78e9abd6707730d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Stadiums.AppDelegate.fetchStadiums() -&gt; ()"
+                  moduleName = "Stadiums"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivans/Documents/Programming/iOS/Interview%20Tasks/Stadiums/Stadiums/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "AF9FCF0E-BE35-40F3-A700-ECDE7F612C67 - 4626b99e83e3a1c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Stadiums.Stadium&gt;) -&gt; () in Stadiums.AppDelegate.fetchStadiums() -&gt; ()"
+                  moduleName = "Stadiums"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivans/Documents/Programming/iOS/Interview%20Tasks/Stadiums/Stadiums/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

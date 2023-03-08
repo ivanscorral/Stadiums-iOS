@@ -17,6 +17,13 @@
 		0D63CF8629B8EEC4007F1BBB /* StadiumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CF8529B8EEC4007F1BBB /* StadiumsTests.swift */; };
 		0D63CF9029B8EEC4007F1BBB /* StadiumsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CF8F29B8EEC4007F1BBB /* StadiumsUITests.swift */; };
 		0D63CF9229B8EEC4007F1BBB /* StadiumsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CF9129B8EEC4007F1BBB /* StadiumsUITestsLaunchTests.swift */; };
+		0D63CFA229B8EF0F007F1BBB /* Stadium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CFA129B8EF0F007F1BBB /* Stadium.swift */; };
+		0D63CFA529B8EFBA007F1BBB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0D63CFA429B8EFBA007F1BBB /* Alamofire */; };
+		0D63CFA829B8F08E007F1BBB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CFA729B8F08E007F1BBB /* CoreDataManager.swift */; };
+		0D63CFAC29B8F142007F1BBB /* StadiumAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CFAB29B8F142007F1BBB /* StadiumAPI.swift */; };
+		0D63CFAE29B8F18B007F1BBB /* StadiumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CFAD29B8F18B007F1BBB /* StadiumListViewModel.swift */; };
+		0D63CFBA29B932B7007F1BBB /* StadiumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CFB929B932B7007F1BBB /* StadiumList.swift */; };
+		0D63CFC929B94E24007F1BBB /* StadiumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CFC829B94E24007F1BBB /* StadiumListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		0D63CF8B29B8EEC4007F1BBB /* StadiumsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StadiumsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D63CF8F29B8EEC4007F1BBB /* StadiumsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumsUITests.swift; sourceTree = "<group>"; };
 		0D63CF9129B8EEC4007F1BBB /* StadiumsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0D63CFA129B8EF0F007F1BBB /* Stadium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stadium.swift; sourceTree = "<group>"; };
+		0D63CFA729B8F08E007F1BBB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0D63CFAB29B8F142007F1BBB /* StadiumAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumAPI.swift; sourceTree = "<group>"; };
+		0D63CFAD29B8F18B007F1BBB /* StadiumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumListViewModel.swift; sourceTree = "<group>"; };
+		0D63CFB929B932B7007F1BBB /* StadiumList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StadiumList.swift; sourceTree = "<group>"; };
+		0D63CFC329B94468007F1BBB /* StadiumsWithIdAsInt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StadiumsWithIdAsInt.xcdatamodel; sourceTree = "<group>"; };
+		0D63CFC829B94E24007F1BBB /* StadiumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D63CFA529B8EFBA007F1BBB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +116,10 @@
 		0D63CF6A29B8EEC3007F1BBB /* Stadiums */ = {
 			isa = PBXGroup;
 			children = (
+				0D63CFA629B8F076007F1BBB /* Utilities */,
+				0D63CFA029B8EEF4007F1BBB /* Model */,
+				0D63CF9F29B8EEDD007F1BBB /* ViewModel */,
+				0D63CF9E29B8EED5007F1BBB /* View */,
 				0D63CF6B29B8EEC3007F1BBB /* AppDelegate.swift */,
 				0D63CF6D29B8EEC3007F1BBB /* SceneDelegate.swift */,
 				0D63CF6F29B8EEC3007F1BBB /* ViewController.swift */,
@@ -130,6 +149,40 @@
 			path = StadiumsUITests;
 			sourceTree = "<group>";
 		};
+		0D63CF9E29B8EED5007F1BBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D63CFC829B94E24007F1BBB /* StadiumListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D63CF9F29B8EEDD007F1BBB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D63CFAD29B8F18B007F1BBB /* StadiumListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0D63CFA029B8EEF4007F1BBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D63CFA129B8EF0F007F1BBB /* Stadium.swift */,
+				0D63CFB929B932B7007F1BBB /* StadiumList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D63CFA629B8F076007F1BBB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0D63CFA729B8F08E007F1BBB /* CoreDataManager.swift */,
+				0D63CFAB29B8F142007F1BBB /* StadiumAPI.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +199,9 @@
 			dependencies = (
 			);
 			name = Stadiums;
+			packageProductDependencies = (
+				0D63CFA429B8EFBA007F1BBB /* Alamofire */,
+			);
 			productName = Stadiums;
 			productReference = 0D63CF6829B8EEC3007F1BBB /* Stadiums.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +274,9 @@
 				Base,
 			);
 			mainGroup = 0D63CF5F29B8EEC3007F1BBB;
+			packageReferences = (
+				0D63CFA329B8EFBA007F1BBB /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0D63CF6929B8EEC3007F1BBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,7 +320,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D63CFAE29B8F18B007F1BBB /* StadiumListViewModel.swift in Sources */,
+				0D63CFA829B8F08E007F1BBB /* CoreDataManager.swift in Sources */,
+				0D63CFC929B94E24007F1BBB /* StadiumListViewController.swift in Sources */,
+				0D63CFBA29B932B7007F1BBB /* StadiumList.swift in Sources */,
+				0D63CFA229B8EF0F007F1BBB /* Stadium.swift in Sources */,
 				0D63CF7029B8EEC3007F1BBB /* ViewController.swift in Sources */,
+				0D63CFAC29B8F142007F1BBB /* StadiumAPI.swift in Sources */,
 				0D63CF6C29B8EEC3007F1BBB /* AppDelegate.swift in Sources */,
 				0D63CF6E29B8EEC3007F1BBB /* SceneDelegate.swift in Sources */,
 				0D63CF7629B8EEC3007F1BBB /* Stadiums.xcdatamodeld in Sources */,
@@ -607,10 +672,30 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		0D63CFA329B8EFBA007F1BBB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0D63CFA429B8EFBA007F1BBB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0D63CFA329B8EFBA007F1BBB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
 		0D63CF7429B8EEC3007F1BBB /* Stadiums.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				0D63CFC329B94468007F1BBB /* StadiumsWithIdAsInt.xcdatamodel */,
 				0D63CF7529B8EEC3007F1BBB /* Stadiums.xcdatamodel */,
 			);
 			currentVersion = 0D63CF7529B8EEC3007F1BBB /* Stadiums.xcdatamodel */;
