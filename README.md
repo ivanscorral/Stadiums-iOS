@@ -1,6 +1,6 @@
 # Stadiums-iOS
 
-![Stadiums](https://user-images.githubusercontent.com/17148950/224123421-18e8484d-d8c4-447e-8148-a1ad03916498.png)
+![image](https://user-images.githubusercontent.com/17148950/224124080-dacc1338-001f-4464-9a40-24e427d4a304.png)
 
 Stadiums is a simple iOS app that fetches a list of POIs from a website and displays them as a list. It also has the following features
 
