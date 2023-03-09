@@ -8,14 +8,13 @@
 import Alamofire
 
 class StadiumAPI {
-    static func fetchStadiums(completion: @escaping ([Stadium]) -> Void) {
+    static func fetchStadiums(completion: @escaping (Result<[Stadium], Error>) -> Void) {
         AF.request("https://sergiocasero.es/pois.json").responseDecodable(of: StadiumList.self) { response in
             switch response.result {
             case .success(let stadiumList):
-                completion(stadiumList.list)
+                completion(.success(stadiumList.list))
             case .failure(let error):
-                print("Failed to fetch stadiums: \(error.localizedDescription)")
-                completion([])
+                completion(.failure(error))
             }
         }
     }

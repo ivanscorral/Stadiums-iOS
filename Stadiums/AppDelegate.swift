@@ -77,43 +77,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
-    func fetchStadiums() {
-        StadiumAPI.fetchStadiums { stadiums in
-            print("Fetched \(stadiums.count) stadiums:")
-            for stadium in stadiums {
-                print("- Title: \(stadium.title)")
-                print("  ID: \(stadium.id)")
-                print("  Geo Coordinates: \(stadium.geocoordinates)")
-                print("  Image URL: \(stadium.image)")
-                print("  Latitude: \(stadium.latitude)")
-                print("  Longitude: \(stadium.longitude)")
-            }
-        }
-    }
     
     func testCoreData() {
         let coreDataManager = CoreDataManager(modelName: "Stadiums")
 
         // Fetch stadiums from Core Data if available
-        if let stadiums = coreDataManager.fetchStadiums(), !stadiums.isEmpty {
+        if let stadiums = coreDataManager.fetchStadiumEntities(), !stadiums.isEmpty {
             for stadium in stadiums {
                 print("ID: \(stadium.id)")
-                print("Title: \(stadium.title)")
-                print("Geo-coordinates: \(stadium.geocoordinates)")
-                print("Image URL: \(stadium.image)")
+                print("Title: \(stadium.title ?? "")")
+                print("Geo-coordinates: \(stadium.geocoordinates ?? "")")
+                print("Image URL: \(stadium.image ?? "")")
             }
         } else {
             // Fetch stadiums from API if device is connected to network
             if NetworkReachability.isConnected() {
-                StadiumAPI.fetchStadiums { stadiums in
-                    coreDataManager.saveStadiums(stadiums)
-                    print("Stadiums fetched from API and saved to Core Data:")
-                    for stadium in stadiums {
-                        print("ID: \(stadium.id)")
-                        print("Title: \(stadium.title)")
-                        print("Geo-coordinates: \(stadium.geocoordinates)")
-                        print("Image URL: \(stadium.image)")
+                StadiumAPI.fetchStadiums { result in
+                    switch result {
+                    case .success(let stadiums):
+                        coreDataManager.saveStadiumEntities(stadiums.map { $0.toEntity(in: coreDataManager.container.viewContext) })
+                        print("Stadiums fetched from API and saved to Core Data:")
+                        for stadium in stadiums {
+                            print("ID: \(stadium.id)")
+                            print("Title: \(stadium.title)")
+                            print("Geo-coordinates: \(stadium.geocoordinates)")
+                            print("Image URL: \(stadium.image)")
+                        }
+                    case .failure(let error):
+                        print("Failed to fetch stadiums: \(error.localizedDescription)")
                     }
                 }
             } else {
@@ -121,7 +112,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 
 
 

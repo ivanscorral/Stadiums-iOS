@@ -4,22 +4,22 @@
 //
 //  Created by Ivan Sanchez on 8/3/23.
 //
-
 import Foundation
 import CoreData
 import SystemConfiguration
-import Foundation
-import CoreData
+import Alamofire
 
 class StadiumListViewModel {
     private let coreDataManager = CoreDataManager(modelName: "Stadiums")
     private var stadiums: [Stadium] = []
     private var filteredStadiums: [Stadium] = []
-
+    
+    var stadiumsDidChange: ((Result<[Stadium], Error>) -> Void)?
+    var errorDidChange: ((Error?) -> Void)?
     var isEmpty: Bool {
         return filteredStadiums.isEmpty
     }
-
+    
     /**
      Fetches the list of stadiums from the API or from Core Data, depending on network reachability and availability of local data.
      
@@ -29,12 +29,23 @@ class StadiumListViewModel {
         if let storedStadiums = coreDataManager.fetchStadiumEntities() {
             stadiums = storedStadiums.map { Stadium(from: $0) }
             filteredStadiums = stadiums
+            stadiumsDidChange?(.success(filteredStadiums))
         } else if NetworkReachability.isConnected() {
-            StadiumAPI.fetchStadiums { [weak self] stadiums in
-                self?.stadiums = stadiums
-                self?.filteredStadiums = stadiums
-                self?.coreDataManager.saveStadiumEntities(stadiums.map { $0.toEntity(in: self!.coreDataManager.container.viewContext) })
+            StadiumAPI.fetchStadiums { [weak self] result in
+                switch result {
+                case .success(let stadiums):
+                    self?.stadiums = stadiums
+                    self?.filteredStadiums = stadiums
+                    self?.coreDataManager.saveStadiumEntities(stadiums.map { $0.toEntity(in: self!.coreDataManager.container.viewContext) })
+                    self?.stadiumsDidChange?(.success(stadiums))
+                case .failure(let error):
+                    print("Failed to fetch stadiums: \(error.localizedDescription)")
+                    self?.errorDidChange?(error)
+                }
             }
+        } else {
+            let error = NSError(domain: "Stadiums", code: 1, userInfo: [NSLocalizedDescriptionKey: "No data available"])
+            self.errorDidChange?(error)
         }
     }
 
@@ -49,6 +60,7 @@ class StadiumListViewModel {
         } else {
             filteredStadiums = stadiums.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
         }
+        stadiumsDidChange?(.success(filteredStadiums))
     }
     
     /**

@@ -18,7 +18,6 @@ class StadiumListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableHeaderView = searchBar
     }
     /** TODO:
     func fetchData(){
