@@ -59,9 +59,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="gT1-nk-Zik" id="Szd-pS-H2N"/>
-                        <outlet property="navigationBar" destination="BKH-az-qI0" id="DdG-1e-WH2"/>
-                        <outlet property="searchBar" destination="HmW-GA-r4c" id="0n4-dt-jxv"/>
+                        <outlet property="activityIndicator" destination="gT1-nk-Zik" id="Aba-XK-ihK"/>
+                        <outlet property="navigationBar" destination="BKH-az-qI0" id="ls4-lm-bo4"/>
+                        <outlet property="searchBar" destination="HmW-GA-r4c" id="JpJ-Ik-gEm"/>
                         <outlet property="tableView" destination="8w7-aO-bUR" id="ttA-5i-7AO"/>
                     </connections>
                 </viewController>

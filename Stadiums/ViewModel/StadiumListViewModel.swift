@@ -26,7 +26,7 @@ class StadiumListViewModel {
      If there is data available in Core Data, it will be used to populate the list of stadiums. Otherwise, if network connectivity is available, the list will be fetched from the API and stored in Core Data. If neither option is available, the list will be empty.
      */
     func fetchStadiums() {
-        if let storedStadiums = coreDataManager.fetchStadiumEntities() {
+        if let storedStadiums = coreDataManager.fetchStadiumEntities(), !storedStadiums.isEmpty {
             stadiums = storedStadiums.map { Stadium(from: $0) }
             filteredStadiums = stadiums
             stadiumsDidChange?(.success(filteredStadiums))
@@ -58,11 +58,12 @@ class StadiumListViewModel {
         if searchText.isEmpty {
             filteredStadiums = stadiums
         } else {
-            filteredStadiums = stadiums.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+            let filteredSet = Set(stadiums.filter { $0.title.localizedCaseInsensitiveContains(searchText) })
+            filteredStadiums = Array(filteredSet)
         }
         stadiumsDidChange?(.success(filteredStadiums))
     }
-    
+
     /**
      Returns the stadium at the specified index, if it exists in the filtered list of stadiums.
      

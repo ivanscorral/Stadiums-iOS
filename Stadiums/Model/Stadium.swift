@@ -1,3 +1,4 @@
+//
 //  Stadium.swift
 //  Stadiums
 //
@@ -6,8 +7,9 @@
 import Foundation
 import Alamofire
 import CoreData
+import Foundation
 
-public struct Stadium: Codable {
+public struct Stadium: Codable, Hashable {
     let id: Int
     let title: String
     let geocoordinates: String
@@ -22,23 +24,6 @@ public struct Stadium: Codable {
     var longitude: Double {
         let components = geocoordinates.components(separatedBy: ",")
         return Double(components.last ?? "") ?? 0.0
-    }
-
-    // Method to download stadium image asynchronously
-    func downloadImage(completion: @escaping (Data?) -> Void) {
-        guard let url = URL(string: image) else {
-            completion(nil)
-            return
-        }
-        AF.request(url).responseData { response in
-            switch response.result {
-            case .success(let data):
-                completion(data)
-            case .failure(let error):
-                print("Failed to download stadium image: \(error.localizedDescription)")
-                completion(nil)
-            }
-        }
     }
 
     // Define CodingKeys enum to map between JSON keys and struct properties
@@ -93,5 +78,13 @@ public struct Stadium: Codable {
         self.geocoordinates = geocoordinates
         self.image = image
     }
-}
 
+    // Conform to Hashable protocol
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    public static func == (lhs: Stadium, rhs: Stadium) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
