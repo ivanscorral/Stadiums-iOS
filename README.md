@@ -19,8 +19,5 @@ Stadiums is a simple iOS app that fetches a list of POIs from a website and disp
 ## Requirements
 
 * Xcode 14.2 is recommended
-
-### Swift Package Manager Libraries
-
-* Alamofire
-* 
+* Alamofire (SPM)
+* Kingfisher (SPM)
