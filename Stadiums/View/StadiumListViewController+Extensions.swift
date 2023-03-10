@@ -59,7 +59,6 @@ extension StadiumListViewController {
         viewModel.stadiumsDidChange = { [weak self] result in
             switch result {
             case .success(let stadiums):
-                self?.stadiums.removeAll()
                 self?.stadiums.append(contentsOf: stadiums)
                 self?.tableView.reloadData()
             case .failure(let error):

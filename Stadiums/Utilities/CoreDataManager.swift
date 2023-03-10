@@ -66,24 +66,35 @@ public class CoreDataManager {
     public func saveStadiumEntities(_ stadiums: [StadiumEntity]) {
         // Create a new background context for the operation.
         let context = container.newBackgroundContext()
-        
+
         do {
-            // Convert each StadiumEntity object to a Stadium object and save it to Core Data.
-            try stadiums.forEach { entity in
-                let model = entity.toModel()
-                let stadiumEntity = StadiumEntity(context: context)
-                stadiumEntity.id = Int32(model.id)
-                stadiumEntity.title = model.title
-                stadiumEntity.geocoordinates = model.geocoordinates
-                stadiumEntity.image = model.image
+            for entity in stadiums {
+                // Check if a StadiumEntity with the same ID already exists in the database.
+                let request: NSFetchRequest<StadiumEntity> = StadiumEntity.fetchRequest()
+                request.predicate = NSPredicate(format: "id = %d", entity.id)
+
+                if let existingEntity = try context.fetch(request).first {
+                    // An entity with the same ID exists, update its properties.
+                    existingEntity.title = entity.title
+                    existingEntity.geocoordinates = entity.geocoordinates
+                    existingEntity.image = entity.image
+                } else {
+                    // No entity with the same ID exists, create a new one.
+                    let newEntity = StadiumEntity(context: context)
+                    newEntity.id = entity.id
+                    newEntity.title = entity.title
+                    newEntity.geocoordinates = entity.geocoordinates
+                    newEntity.image = entity.image
+                }
             }
-            
+
             // Save the changes to Core Data.
             try context.save()
         } catch {
             print("Failed to save stadiums: \(error.localizedDescription)")
         }
     }
+
     
     public func resetData() throws {
         let coordinator = container.persistentStoreCoordinator

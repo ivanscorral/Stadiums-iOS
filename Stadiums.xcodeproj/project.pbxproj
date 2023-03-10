@@ -30,7 +30,7 @@
 		0D63CFC929B94E24007F1BBB /* StadiumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CFC829B94E24007F1BBB /* StadiumListViewController.swift */; };
 		0DE5CAD129BABE1700A79B72 /* StadiumListViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE5CAD029BABE1700A79B72 /* StadiumListViewController+Extensions.swift */; };
 		0DE5CAD829BAC45100A79B72 /* StadiumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE5CAD629BAC45100A79B72 /* StadiumDetailsViewController.swift */; };
-		0DE5CAD929BAC45100A79B72 /* StadiumDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5CAD729BAC45100A79B72 /* StadiumDetailsViewController.xib */; };
+		0DE5CADC29BB558200A79B72 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE5CADB29BB558200A79B72 /* UIUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +77,7 @@
 		0D63CFC829B94E24007F1BBB /* StadiumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumListViewController.swift; sourceTree = "<group>"; };
 		0DE5CAD029BABE1700A79B72 /* StadiumListViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StadiumListViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0DE5CAD629BAC45100A79B72 /* StadiumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumDetailsViewController.swift; sourceTree = "<group>"; };
-		0DE5CAD729BAC45100A79B72 /* StadiumDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StadiumDetailsViewController.xib; sourceTree = "<group>"; };
+		0DE5CADB29BB558200A79B72 /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,6 @@
 				0D39C55D29BA493000D4922E /* StadiumTableViewCell.xib */,
 				0DE5CAD029BABE1700A79B72 /* StadiumListViewController+Extensions.swift */,
 				0DE5CAD629BAC45100A79B72 /* StadiumDetailsViewController.swift */,
-				0DE5CAD729BAC45100A79B72 /* StadiumDetailsViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +198,7 @@
 				0D63CFA729B8F08E007F1BBB /* CoreDataManager.swift */,
 				0D207A3229BA8B9400009FD7 /* NetworkReachability.swift */,
 				0D63CFAB29B8F142007F1BBB /* StadiumAPI.swift */,
+				0DE5CADB29BB558200A79B72 /* UIUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -318,7 +318,6 @@
 				0D63CF7B29B8EEC4007F1BBB /* LaunchScreen.storyboard in Resources */,
 				0D63CF7829B8EEC4007F1BBB /* Assets.xcassets in Resources */,
 				0D63CF7329B8EEC3007F1BBB /* Main.storyboard in Resources */,
-				0DE5CAD929BAC45100A79B72 /* StadiumDetailsViewController.xib in Resources */,
 				0D39C55F29BA493000D4922E /* StadiumTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE5CADC29BB558200A79B72 /* UIUtils.swift in Sources */,
 				0D63CFAE29B8F18B007F1BBB /* StadiumListViewModel.swift in Sources */,
 				0D63CFA829B8F08E007F1BBB /* CoreDataManager.swift in Sources */,
 				0D63CFC929B94E24007F1BBB /* StadiumListViewController.swift in Sources */,
@@ -540,8 +540,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -551,7 +551,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -568,8 +568,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -579,7 +579,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

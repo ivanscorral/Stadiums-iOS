@@ -11,7 +11,6 @@
         <!--StadiumsNavigationController-->
         <scene sceneID="K6e-10-aO9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4tE-9J-hkA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="StadiumsNavigationConytolñlrt" title="StadiumsNavigationController" id="6hN-XG-kPS" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Ko-oQ-gfc">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -21,6 +20,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="J3H-Ht-TIM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4tE-9J-hkA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-741" y="-2"/>
         </scene>
@@ -39,14 +39,8 @@
                                     <constraint firstAttribute="height" constant="717" id="ncX-qn-LDB"/>
                                 </constraints>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKH-az-qI0">
-                                <rect key="frame" x="0.0" y="49" width="393" height="44"/>
-                                <items>
-                                    <navigationItem id="JoB-Th-kur"/>
-                                </items>
-                            </navigationBar>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HmW-GA-r4c">
-                                <rect key="frame" x="0.0" y="93" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="91" width="393" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="xED-Sk-HIA"/>
                                 </constraints>
@@ -61,19 +55,14 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8w7-aO-bUR" secondAttribute="trailing" id="04K-q6-Sc4"/>
                             <constraint firstItem="HmW-GA-r4c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0u4-bg-kX2"/>
-                            <constraint firstItem="BKH-az-qI0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="49" id="HGr-ov-LPT"/>
                             <constraint firstItem="HmW-GA-r4c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PYF-5a-Kea"/>
-                            <constraint firstItem="HmW-GA-r4c" firstAttribute="top" secondItem="BKH-az-qI0" secondAttribute="bottom" id="Tko-9J-jDM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8w7-aO-bUR" secondAttribute="bottom" constant="-34" id="Tm8-qW-U0M"/>
                             <constraint firstItem="8w7-aO-bUR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ePw-YN-QeE"/>
-                            <constraint firstItem="BKH-az-qI0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hOr-f6-jZo"/>
-                            <constraint firstItem="BKH-az-qI0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o5J-RQ-LLE"/>
+                            <constraint firstItem="HmW-GA-r4c" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="91" id="sMa-qQ-kg1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gn6-Zs-LeL"/>
                     <connections>
-                        <outlet property="navigationBar" destination="BKH-az-qI0" id="eRa-of-Peh"/>
-                        <outlet property="navigationItem" destination="JoB-Th-kur" id="XdL-KD-hSz"/>
                         <outlet property="searchBar" destination="HmW-GA-r4c" id="JpJ-Ik-gEm"/>
                         <outlet property="tableView" destination="8w7-aO-bUR" id="ttA-5i-7AO"/>
                     </connections>
@@ -81,6 +70,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
+        </scene>
+        <!--Stadium Details View Controller-->
+        <scene sceneID="WMt-mb-ADG">
+            <objects>
+                <viewController storyboardIdentifier="StadiumDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hkG-rJ-UQY" customClass="StadiumDetailsViewController" customModule="Stadiums" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UFY-06-f5J">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4F-Mx-hkH" userLabel="ContentView">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Las coordenadas de este estadio son: {coordenadas}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jso-1U-EgR">
+                                        <rect key="frame" x="32" y="292.66666666666669" width="303" height="42.333333333333314"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del estadio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fex-sN-pqC">
+                                        <rect key="frame" x="32" y="19.999999999999996" width="283.33333333333331" height="40.666666666666657"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSn-2e-JhI">
+                                        <rect key="frame" x="107.33333333333333" y="361.33333333333331" width="178.66666666666669" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Abrir en Apple Maps"/>
+                                        <connections>
+                                            <action selector="openWithAppleMaps:" destination="hkG-rJ-UQY" eventType="touchUpInside" id="Rgh-Mp-hua"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EkM-ve-5Qc">
+                                        <rect key="frame" x="32" y="76.666666666666657" width="300" height="199.99999999999997"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="0tl-6N-uzo"/>
+                                            <constraint firstAttribute="width" constant="300" id="14u-PH-Aia"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="jso-1U-EgR" firstAttribute="leading" secondItem="j4F-Mx-hkH" secondAttribute="leading" constant="32" id="4Hh-LR-IcC"/>
+                                    <constraint firstItem="EkM-ve-5Qc" firstAttribute="leading" secondItem="j4F-Mx-hkH" secondAttribute="leading" constant="32" id="8UE-m4-VAj"/>
+                                    <constraint firstItem="EkM-ve-5Qc" firstAttribute="top" secondItem="Fex-sN-pqC" secondAttribute="bottom" constant="16" id="AwA-20-gEl"/>
+                                    <constraint firstItem="jso-1U-EgR" firstAttribute="top" secondItem="EkM-ve-5Qc" secondAttribute="bottom" constant="16" id="EGn-v1-Gzy"/>
+                                    <constraint firstItem="Fex-sN-pqC" firstAttribute="leading" secondItem="j4F-Mx-hkH" secondAttribute="leading" constant="32" id="JfM-sr-GHa"/>
+                                    <constraint firstItem="wSn-2e-JhI" firstAttribute="top" secondItem="jso-1U-EgR" secondAttribute="bottom" constant="26.333333333333314" id="KML-x0-7fZ"/>
+                                    <constraint firstItem="wSn-2e-JhI" firstAttribute="centerX" secondItem="j4F-Mx-hkH" secondAttribute="centerX" id="NhC-Gu-BwZ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fex-sN-pqC" secondAttribute="trailing" constant="20" symbolic="YES" id="Sjw-6p-zgv"/>
+                                    <constraint firstAttribute="height" constant="759" id="ZHr-Yr-MfC"/>
+                                    <constraint firstItem="Fex-sN-pqC" firstAttribute="top" secondItem="j4F-Mx-hkH" secondAttribute="top" constant="20" symbolic="YES" id="fSA-Aa-y6J"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jso-1U-EgR" secondAttribute="trailing" constant="20" symbolic="YES" id="hpD-yY-0bu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d76-6U-H4c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j4F-Mx-hkH" firstAttribute="top" secondItem="d76-6U-H4c" secondAttribute="top" id="5kP-3J-wDC"/>
+                            <constraint firstItem="d76-6U-H4c" firstAttribute="trailing" secondItem="j4F-Mx-hkH" secondAttribute="trailing" id="HxI-nK-FtN"/>
+                            <constraint firstItem="j4F-Mx-hkH" firstAttribute="leading" secondItem="d76-6U-H4c" secondAttribute="leading" id="uWQ-QP-6oo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GWt-TN-kbz"/>
+                    <connections>
+                        <outlet property="mapsButton" destination="wSn-2e-JhI" id="yM1-tn-fhA"/>
+                        <outlet property="stadiumCoordinatesLabel" destination="jso-1U-EgR" id="WNn-EP-9aM"/>
+                        <outlet property="stadiumImageView" destination="EkM-ve-5Qc" id="qdg-Gi-Rex"/>
+                        <outlet property="stadiumTitleLabel" destination="Fex-sN-pqC" id="dWk-gX-vlm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMe-Da-fcW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904.58015267175574" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

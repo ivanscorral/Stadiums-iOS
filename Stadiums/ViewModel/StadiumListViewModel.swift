@@ -13,12 +13,29 @@ class StadiumListViewModel {
     private let coreDataManager = CoreDataManager(modelName: "Stadiums")
     private var stadiums: [Stadium] = []
     private var filteredStadiums: [Stadium] = []
+    private let resetAllowed:Bool = true
     
     var stadiumsDidChange: ((Result<[Stadium], Error>) -> Void)?
     var errorDidChange: ((Error?) -> Void)?
     var isEmpty: Bool {
         return filteredStadiums.isEmpty
     }
+    
+    func deleteStore() {
+        // This method is only for testing and debugging purposes and should not be used in production.
+        // It deletes the entire Core Data store and resets it to its default state.
+        // Use with caution.
+        
+        if resetAllowed {
+            do {
+                try coreDataManager.resetData()
+            } catch {
+                print("Failed to reset Core Data stack: \(error.localizedDescription)")
+            }
+        }
+    }
+
+
     
     /**
      Fetches the list of stadiums from the API or from Core Data, depending on network reachability and availability of local data.
