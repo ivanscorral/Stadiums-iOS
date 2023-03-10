@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6hN-XG-kPS">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--StadiumsNavigationController-->
+        <scene sceneID="K6e-10-aO9">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4tE-9J-hkA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="StadiumsNavigationConytolñlrt" title="StadiumsNavigationController" id="6hN-XG-kPS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Ko-oQ-gfc">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="J3H-Ht-TIM"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-741" y="-2"/>
+        </scene>
         <!--Stadium List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -16,16 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="gT1-nk-Zik">
-                                <rect key="frame" x="0.0" y="404" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKH-az-qI0">
-                                <rect key="frame" x="0.0" y="47" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="Stadiums" id="fgW-KD-dq1"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8w7-aO-bUR">
                                 <rect key="frame" x="0.0" y="135" width="393" height="717"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -33,8 +39,14 @@
                                     <constraint firstAttribute="height" constant="717" id="ncX-qn-LDB"/>
                                 </constraints>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKH-az-qI0">
+                                <rect key="frame" x="0.0" y="49" width="393" height="44"/>
+                                <items>
+                                    <navigationItem id="JoB-Th-kur"/>
+                                </items>
+                            </navigationBar>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HmW-GA-r4c">
-                                <rect key="frame" x="0.0" y="91" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="93" width="393" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="xED-Sk-HIA"/>
                                 </constraints>
@@ -49,7 +61,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8w7-aO-bUR" secondAttribute="trailing" id="04K-q6-Sc4"/>
                             <constraint firstItem="HmW-GA-r4c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0u4-bg-kX2"/>
-                            <constraint firstItem="BKH-az-qI0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="47" id="HGr-ov-LPT"/>
+                            <constraint firstItem="BKH-az-qI0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="49" id="HGr-ov-LPT"/>
                             <constraint firstItem="HmW-GA-r4c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PYF-5a-Kea"/>
                             <constraint firstItem="HmW-GA-r4c" firstAttribute="top" secondItem="BKH-az-qI0" secondAttribute="bottom" id="Tko-9J-jDM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8w7-aO-bUR" secondAttribute="bottom" constant="-34" id="Tm8-qW-U0M"/>
@@ -58,9 +70,10 @@
                             <constraint firstItem="BKH-az-qI0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o5J-RQ-LLE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gn6-Zs-LeL"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="gT1-nk-Zik" id="Aba-XK-ihK"/>
-                        <outlet property="navigationBar" destination="BKH-az-qI0" id="ls4-lm-bo4"/>
+                        <outlet property="navigationBar" destination="BKH-az-qI0" id="eRa-of-Peh"/>
+                        <outlet property="navigationItem" destination="JoB-Th-kur" id="XdL-KD-hSz"/>
                         <outlet property="searchBar" destination="HmW-GA-r4c" id="JpJ-Ik-gEm"/>
                         <outlet property="tableView" destination="8w7-aO-bUR" id="ttA-5i-7AO"/>
                     </connections>

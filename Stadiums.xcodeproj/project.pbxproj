@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D207A3329BA8B9400009FD7 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D207A3229BA8B9400009FD7 /* NetworkReachability.swift */; };
 		0D39C55B29BA471200D4922E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0D39C55A29BA471200D4922E /* Kingfisher */; };
 		0D39C55E29BA493000D4922E /* StadiumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D39C55C29BA493000D4922E /* StadiumTableViewCell.swift */; };
 		0D39C55F29BA493000D4922E /* StadiumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D39C55D29BA493000D4922E /* StadiumTableViewCell.xib */; };
@@ -27,6 +28,9 @@
 		0D63CFAE29B8F18B007F1BBB /* StadiumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CFAD29B8F18B007F1BBB /* StadiumListViewModel.swift */; };
 		0D63CFBA29B932B7007F1BBB /* StadiumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CFB929B932B7007F1BBB /* StadiumList.swift */; };
 		0D63CFC929B94E24007F1BBB /* StadiumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CFC829B94E24007F1BBB /* StadiumListViewController.swift */; };
+		0DE5CAD129BABE1700A79B72 /* StadiumListViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE5CAD029BABE1700A79B72 /* StadiumListViewController+Extensions.swift */; };
+		0DE5CAD829BAC45100A79B72 /* StadiumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE5CAD629BAC45100A79B72 /* StadiumDetailsViewController.swift */; };
+		0DE5CAD929BAC45100A79B72 /* StadiumDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5CAD729BAC45100A79B72 /* StadiumDetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D207A3229BA8B9400009FD7 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		0D39C55C29BA493000D4922E /* StadiumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumTableViewCell.swift; sourceTree = "<group>"; };
 		0D39C55D29BA493000D4922E /* StadiumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StadiumTableViewCell.xib; sourceTree = "<group>"; };
 		0D63CF6829B8EEC3007F1BBB /* Stadiums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stadiums.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +75,9 @@
 		0D63CFB929B932B7007F1BBB /* StadiumList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StadiumList.swift; sourceTree = "<group>"; };
 		0D63CFC329B94468007F1BBB /* StadiumsWithIdAsInt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StadiumsWithIdAsInt.xcdatamodel; sourceTree = "<group>"; };
 		0D63CFC829B94E24007F1BBB /* StadiumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumListViewController.swift; sourceTree = "<group>"; };
+		0DE5CAD029BABE1700A79B72 /* StadiumListViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StadiumListViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0DE5CAD629BAC45100A79B72 /* StadiumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumDetailsViewController.swift; sourceTree = "<group>"; };
+		0DE5CAD729BAC45100A79B72 /* StadiumDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StadiumDetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,9 @@
 				0D63CFC829B94E24007F1BBB /* StadiumListViewController.swift */,
 				0D39C55C29BA493000D4922E /* StadiumTableViewCell.swift */,
 				0D39C55D29BA493000D4922E /* StadiumTableViewCell.xib */,
+				0DE5CAD029BABE1700A79B72 /* StadiumListViewController+Extensions.swift */,
+				0DE5CAD629BAC45100A79B72 /* StadiumDetailsViewController.swift */,
+				0DE5CAD729BAC45100A79B72 /* StadiumDetailsViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				0D63CFA729B8F08E007F1BBB /* CoreDataManager.swift */,
+				0D207A3229BA8B9400009FD7 /* NetworkReachability.swift */,
 				0D63CFAB29B8F142007F1BBB /* StadiumAPI.swift */,
 			);
 			path = Utilities;
@@ -306,6 +318,7 @@
 				0D63CF7B29B8EEC4007F1BBB /* LaunchScreen.storyboard in Resources */,
 				0D63CF7829B8EEC4007F1BBB /* Assets.xcassets in Resources */,
 				0D63CF7329B8EEC3007F1BBB /* Main.storyboard in Resources */,
+				0DE5CAD929BAC45100A79B72 /* StadiumDetailsViewController.xib in Resources */,
 				0D39C55F29BA493000D4922E /* StadiumTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,13 +348,16 @@
 				0D63CFA829B8F08E007F1BBB /* CoreDataManager.swift in Sources */,
 				0D63CFC929B94E24007F1BBB /* StadiumListViewController.swift in Sources */,
 				0D63CFBA29B932B7007F1BBB /* StadiumList.swift in Sources */,
+				0DE5CAD129BABE1700A79B72 /* StadiumListViewController+Extensions.swift in Sources */,
 				0D63CFA229B8EF0F007F1BBB /* Stadium.swift in Sources */,
 				0D63CF7029B8EEC3007F1BBB /* ViewController.swift in Sources */,
 				0D63CFAC29B8F142007F1BBB /* StadiumAPI.swift in Sources */,
 				0D63CF6C29B8EEC3007F1BBB /* AppDelegate.swift in Sources */,
+				0DE5CAD829BAC45100A79B72 /* StadiumDetailsViewController.swift in Sources */,
 				0D39C55E29BA493000D4922E /* StadiumTableViewCell.swift in Sources */,
 				0D63CF6E29B8EEC3007F1BBB /* SceneDelegate.swift in Sources */,
 				0D63CF7629B8EEC3007F1BBB /* Stadiums.xcdatamodeld in Sources */,
+				0D207A3329BA8B9400009FD7 /* NetworkReachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

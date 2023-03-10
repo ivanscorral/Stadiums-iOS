@@ -10,8 +10,14 @@ import Kingfisher
 
 class StadiumTableViewCell: UITableViewCell {
         
+    @IBOutlet weak var cellContentView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var previewImageView: UIImageView! {
+        didSet{
+            previewImageView.layer.cornerRadius = 18
+            previewImageView.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var geocoordinateLabel: UILabel!
     
     var stadium: Stadium? {
@@ -22,6 +28,7 @@ class StadiumTableViewCell: UITableViewCell {
         
             if let imageUrl = URL(string: stadium.image) {
                 previewImageView.kf.setImage(with: imageUrl)
+                
             } else {
                 previewImageView.image = nil
             }
@@ -29,11 +36,12 @@ class StadiumTableViewCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib()   
         
         // Initialization code
-        previewImageView.layer.cornerRadius = 8
-        previewImageView.clipsToBounds = true
+
+        layer.cornerRadius = 16
+        layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
