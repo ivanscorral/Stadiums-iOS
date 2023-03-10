@@ -6,13 +6,15 @@
 
 ## Overview
 
-Stadiums is a simple iOS app that fetches a list of POIs from a website and displays them as a list. It also has the following features:
+Stadiums is an iOS app that lets users explore a list of touristic stadiums with ease. The app fetches a list of stadiums from a website and displays them as a list. It also has the following features:
 
-- [ ] Detailed view when clicking on a POI
-- [x] Search bar for filtering
-- [x] Asynchronous image and list loading
-- [x] Uses Core Data to persist the data fetched from the API
-- [x] Implement a development pattern (**we are using MVVM here**)
+- ⏳: Implement a detailed view that displays more information about the selected stadium (WIP)
+- ✅: Detailed view when clicking on a stadium
+- ✅: Implement search and filter functionality for the stadium list (WIP)
+- ✅: Search bar for filtering stadiums
+- ✅: Asynchronous image and list loading
+- ✅: Uses Core Data to persist the stadium data fetched from the API
+- ✅: Implement a development pattern (**we are using MVVM here**)
 
 ## Features
 
@@ -27,23 +29,31 @@ The app includes some additional features not asked for in the task:
 
 The following are the items in the roadmap for this project:
 
-- [x] Implement main list UI
-- [x] Add Kingfisher to SPM to fetch images
-- [x] Implement search bar functionality
-- [x] Image fetching 
-- [ ] Detailed visualization
-- [x] Fetching using Alamofire
-- [x] Core data storage
+- ❌: Write unit tests for the app
+- ⏳: Implement a detailed view that displays more information about the selected stadium (WIP)
+- ⏳: Improve UI/UX for better user experience (WIP)
+- ✅: Fetch the list of stadiums from https://sergiocasero.es/pois.json
+- ✅: Store the fetched data using Core Data for persistent storage
+- ✅: Display the list of stadiums in the app
+- ✅: Implement search and filter functionality for the stadium list (WIP)
+
 
 ## Requirements
 
 The following are the requirements for this project:
 
-* Xcode 14.2 or later
-* Alamofire 
-* Kingfisher 
+### Dependencies
+
+| Library    | Version | Usage Justification                                       |
+|------------|---------|-----------------------------------------------------------|
+| Alamofire  | 5.4     | Used for making HTTP network requests to retrieve stadium data from the API. |
+| Kingfisher | 6.3     | Used for downloading and caching stadium images in a memory-efficient way. |
 
 Note: You may need to install these dependencies using Swift Package Manager. To do this, go to `File > Swift Packages > Add Package Dependency`.
+
+### Software
+
+* Xcode 14.2 or later
 
 ## Installation
 
@@ -54,7 +64,9 @@ Note: You may need to install these dependencies using Swift Package Manager. To
 
 ## Contributing
 
-This is a private project for an interview, and contributing is not allowed. However, you are free to fork the repository and make your changes, following the terms of the GNU GPLv3 license.
+Thank you for your interest in contributing to Stadiums-iOS. However, this is a private project for an interview, and contributions are not accepted at this time. Any contributions made will be rejected.
+
+You are free to fork the repository and make your changes, following the terms of the GNU GPLv3 license.
 
 ## License
 
