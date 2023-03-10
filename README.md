@@ -36,7 +36,6 @@ The following are the items in the roadmap for this project:
 - ✅: Store the fetched data using Core Data for persistent storage
 - ✅: Display the list of stadiums in the app
 - ✅: Implement search and filter functionality for the stadium list (WIP)
-
 ## Requirements
 
 The following are the requirements for this project:
@@ -45,8 +44,8 @@ The following are the requirements for this project:
 
 | Library    | Version | Usage Justification                                       |
 |------------|---------|-----------------------------------------------------------|
-| Alamofire  | > 6.0     | Used for making HTTP network requests to retrieve stadium data from the API. |
-| Kingfisher | > 7.0    | Used for downloading and caching stadium images in a memory-efficient way. |
+| Alamofire  | >= 6.0  | Used for making HTTP network requests to retrieve stadium data from the API. |
+| Kingfisher | >= 7.0  | Used for downloading and caching stadium images in a memory-efficient way. |
 
 Note: You may need to install these dependencies using Swift Package Manager. To do this, go to `File > Swift Packages > Add Package Dependency`.
 
@@ -54,10 +53,10 @@ Note: You may need to install these dependencies using Swift Package Manager. To
 
 * Xcode 14.2 or later
 
-### Tested Environments
+### Devices and iOS versions tested 
 
-* Physical Device: iPhone 14 Pro with iOS 16.3.1
-* Simulators: iPhone 14 Pro with iOS 16.2
+* iPhone 14 Pro with iOS 16.3.1
+* iPhone 14 Pro Simulator with iOS 16.2 
 
 ## Installation
 
