@@ -1,16 +1,16 @@
 # Stadiums-iOS
 
 <p align="center">
-  <img width="300" height="600" src="https://user-images.githubusercontent.com/17148950/224124080-dacc1338-001f-4464-9a40-24e427d4a304.png">
+  <img width="300" height="600" src="https://user-images.githubusercontent.com/17148950/224367924-582869bc-e773-45fd-b0b8-3f9cb4024d66.png">
 </p>
 
 ## Overview
 
 Stadiums is an iOS app that lets users explore a list of touristic stadiums with ease. The app fetches a list of stadiums from a website and displays them as a list. It also has the following features:
 
-- ⏳: Implement a detailed view that displays more information about the selected stadium (WIP)
+- ✅: Implement a detailed view that displays more information about the selected stadium
 - ✅: Detailed view when clicking on a stadium
-- ✅: Implement search and filter functionality for the stadium list (WIP)
+- ✅: Implement search and filter functionality for the stadium list
 - ✅: Search bar for filtering stadiums
 - ✅: Asynchronous image and list loading
 - ✅: Uses Core Data to persist the stadium data fetched from the API
@@ -29,13 +29,13 @@ The app includes some additional features not asked for in the task:
 
 The following are the items in the roadmap for this project:
 
-- ❌: Write unit tests for the app (Optional)
-- ⏳: Implement a detailed view that displays more information about the selected stadium (WIP)
-- ⏳: Improve UI/UX for better user experience (WIP)
+- ⏳: Write unit tests for the app (Optional)
+- ✅: Implement a detailed view that displays more information about the selected stadium
+- ✅: Improve UI/UX for better user experience 
 - ✅: Fetch the list of stadiums from https://sergiocasero.es/pois.json
 - ✅: Store the fetched data using Core Data for persistent storage
 - ✅: Display the list of stadiums in the app
-- ✅: Implement search and filter functionality for the stadium list (WIP)
+- ✅: Implement search and filter functionality for the stadium list 
 ## Requirements
 
 The following are the requirements for this project:
