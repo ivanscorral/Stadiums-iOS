@@ -29,7 +29,7 @@ The app includes some additional features not asked for in the task:
 
 The following are the items in the roadmap for this project:
 
-- ❌: Write unit tests for the app
+- ❌: Write unit tests for the app (Optional)
 - ⏳: Implement a detailed view that displays more information about the selected stadium (WIP)
 - ⏳: Improve UI/UX for better user experience (WIP)
 - ✅: Fetch the list of stadiums from https://sergiocasero.es/pois.json
@@ -45,8 +45,8 @@ The following are the requirements for this project:
 
 | Library    | Version | Usage Justification                                       |
 |------------|---------|-----------------------------------------------------------|
-| Alamofire  | 5.4     | Used for making HTTP network requests to retrieve stadium data from the API. |
-| Kingfisher | 6.3     | Used for downloading and caching stadium images in a memory-efficient way. |
+| Alamofire  | > 6.0     | Used for making HTTP network requests to retrieve stadium data from the API. |
+| Kingfisher | > 7.0    | Used for downloading and caching stadium images in a memory-efficient way. |
 
 Note: You may need to install these dependencies using Swift Package Manager. To do this, go to `File > Swift Packages > Add Package Dependency`.
 
