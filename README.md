@@ -37,23 +37,27 @@ The following are the items in the roadmap for this project:
 - ✅: Display the list of stadiums in the app
 - ✅: Implement search and filter functionality for the stadium list (WIP)
 
-
 ## Requirements
 
 The following are the requirements for this project:
 
 ### Dependencies
 
-| Library    | Version  | Usage Justification                                       |
-|------------|----------|-----------------------------------------------------------|
-| Alamofire  | >= 6.0.0 | Used for making HTTP network requests to retrieve stadium data from the API. |
-| Kingfisher | >= 7.0.0 | Used for downloading and caching stadium images in a memory-efficient way. |
+| Library    | Version | Usage Justification                                       |
+|------------|---------|-----------------------------------------------------------|
+| Alamofire  | 5.4     | Used for making HTTP network requests to retrieve stadium data from the API. |
+| Kingfisher | 6.3     | Used for downloading and caching stadium images in a memory-efficient way. |
 
 Note: You may need to install these dependencies using Swift Package Manager. To do this, go to `File > Swift Packages > Add Package Dependency`.
 
 ### Software
 
 * Xcode 14.2 or later
+
+### Tested Environments
+
+* Physical Device: iPhone 14 Pro with iOS 16.3.1
+* Simulators: iPhone 14 Pro with iOS 16.2
 
 ## Installation
 
