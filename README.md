@@ -68,6 +68,16 @@ Thank you for your interest in contributing to Stadiums-iOS. However, this is a 
 
 You are free to fork the repository and make your changes, following the terms of the GNU GPLv3 license.
 
+## Acknowledgements
+
+I would like to thank the creators and contributors of the libraries used in this project:
+
+- [Alamofire](https://github.com/Alamofire/Alamofire)
+- [Kingfisher](https://github.com/onevcat/Kingfisher)
+
+Thanks to the creators and maintainers of these libraries for providing them free of charge and contributing to the open-source community.
+
+
 ## License
 
 This project is licensed under the GNU GPLv3 license - see the LICENSE file for details.
