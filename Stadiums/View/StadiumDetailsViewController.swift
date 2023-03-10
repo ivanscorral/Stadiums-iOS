@@ -48,6 +48,7 @@ class StadiumDetailsViewController: UIViewController {
     // MARK: - Private Methods
     
     func setupUI(_ stadium: Stadium) {
+        mapsButton.configuration?.imagePadding = 8.0
         stadiumTitleLabel.text = stadium.title
         stadiumCoordinatesLabel.text = "Las coordenadas de este estadio son: \(stadium.geocoordinates)"
         stadiumImageView.kf.setImage(with: URL(string: stadium.image))
@@ -55,6 +56,20 @@ class StadiumDetailsViewController: UIViewController {
         stadiumImageView.layer.masksToBounds = true
 
     }
+       
+    private func setupGestureRecognizers() {
+        let swipeGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(dismissDetailsViewController))
+        swipeGestureRecognizer.edges = .left
+        view.addGestureRecognizer(swipeGestureRecognizer)
+    }
+    
+    private func setupBackButton() {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+        backButton.tintColor = .label
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    // MARK: - Actions
     
     @IBAction func openWithAppleMaps(_ sender: Any) {
         guard let stadium = stadium else { return }
@@ -70,20 +85,6 @@ class StadiumDetailsViewController: UIViewController {
         mapItem.name = stadium.title
         mapItem.openInMaps(launchOptions: options)
     }
-    
-    private func setupGestureRecognizers() {
-        let swipeGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(dismissDetailsViewController))
-        swipeGestureRecognizer.edges = .left
-        view.addGestureRecognizer(swipeGestureRecognizer)
-    }
-    
-    private func setupBackButton() {
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
-        backButton.tintColor = .label
-        navigationItem.leftBarButtonItem = backButton
-    }
-    
-    // MARK: - Actions
     
     @objc private func backButtonPressed() {
         navigationController?.popViewController(animated: true)
