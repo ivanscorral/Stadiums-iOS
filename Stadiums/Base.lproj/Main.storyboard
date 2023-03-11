@@ -141,7 +141,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GWt-TN-kbz"/>
                     <connections>
-                        <outlet property="contentView" destination="j4F-Mx-hkH" id="FHB-4X-per"/>
+                        <outlet property="contentView" destination="j4F-Mx-hkH" id="bAU-6T-HQe"/>
                         <outlet property="mapsButton" destination="wSn-2e-JhI" id="yM1-tn-fhA"/>
                         <outlet property="stadiumCoordinatesLabel" destination="jso-1U-EgR" id="WNn-EP-9aM"/>
                         <outlet property="stadiumImageView" destination="EkM-ve-5Qc" id="qdg-Gi-Rex"/>

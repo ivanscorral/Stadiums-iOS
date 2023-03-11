@@ -20,10 +20,10 @@ extension StadiumListViewController: UISearchBarDelegate {
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
+        // Dismiss the keyboard and deactivate the search bar
         searchBar.resignFirstResponder()
+        searchBar.searchTextField.text = ""
         filterStadiums("")
-        tableView.reloadData()
     }
 
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
