@@ -94,6 +94,7 @@ public class CoreDataManager {
             print("Failed to save stadiums: \(error.localizedDescription)")
         }
     }
+	
 
     
     public func resetData() throws {

@@ -10,12 +10,19 @@ import Foundation
 
 
 	
+// MARK: - UISearchBarDelegate
+
 extension StadiumListViewController: UISearchBarDelegate {
 
-    // MARK: - UISearchBarDelegate
-
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.filterStadiums(searchText)
+        filterStadiums(searchText)
+        tableView.reloadData()
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        filterStadiums("")
         tableView.reloadData()
     }
 
@@ -23,10 +30,45 @@ extension StadiumListViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = true
     }
 
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        cancelButtonTapped()
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
     }
 }
+
+// MARK: - UITableViewDelegate
+
+extension StadiumListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let stadiumDetailsVC = storyboard.instantiateViewController(withIdentifier: "StadiumDetailsViewController") as! StadiumDetailsViewController
+        stadiumDetailsVC.stadium = filteredStadiums[indexPath.row]
+        navigationController?.pushViewController(stadiumDetailsVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 92.0
+    }
+}
+
+
+extension StadiumListViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredStadiums.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StadiumTableViewCell", for: indexPath) as? StadiumTableViewCell else {
+            fatalError("Failed to dequeue StadiumTableViewCell.")
+        }
+        
+        cell.stadium = filteredStadiums[indexPath.row]
+        
+        return cell
+    }
+}
+
 
 extension StadiumListViewController: UIGestureRecognizerDelegate {
 
@@ -59,7 +101,8 @@ extension StadiumListViewController {
         viewModel.stadiumsDidChange = { [weak self] result in
             switch result {
             case .success(let stadiums):
-                self?.stadiums.append(contentsOf: stadiums)
+                self?.allStadiums = stadiums
+                self?.filteredStadiums = stadiums
                 self?.tableView.reloadData()
             case .failure(let error):
                 print("Failed to fetch stadiums: \(error.localizedDescription)")
@@ -77,6 +120,7 @@ extension StadiumListViewController {
             }
         }
     }
+
 
     // MARK: - Fetch stadiums
 

@@ -94,6 +94,8 @@ class StadiumListViewModel {
         // Notify observer of filtered stadiums
         stadiumsDidChange?(.success(filteredStadiums))
     }
+
+
     /**
      Returns the stadium at the specified index, if it exists in the filtered list of stadiums.
      

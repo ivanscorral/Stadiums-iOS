@@ -1,4 +1,3 @@
-//
 //  StadiumListViewController.swift
 //  Stadiums
 //
@@ -8,35 +7,41 @@
 import UIKit
 
 class StadiumListViewController: UIViewController {
-
+    
     // MARK: - Outlets
-
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-
+    
     // MARK: - Properties
-
+    
      let viewModel = StadiumListViewModel()
-     var stadiums: [Stadium] = []
-
+     var allStadiums: [Stadium] = []
+     var filteredStadiums: [Stadium] = [] {
+        didSet {
+            tableView.reloadData()
+            stadiumsDidChange?(.success(filteredStadiums))
+        }
+    }
+    var stadiumsDidChange: ((Result<[Stadium], Error>) -> Void)?
+    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         bindViewModel()
         viewModel.fetchStadiums()
     }
-
-    // MARK: -  methods
-
-     func configureUI() {
+    
+    // MARK: - Methods
+    
+    private func configureUI() {
         UIUtils.setupNavigationBars(navigationController)
         configureTableView()
     }
-
-     func configureTableView() {
+    
+    private func configureTableView() {
         tableView.register(UINib(nibName: "StadiumTableViewCell", bundle: nil), forCellReuseIdentifier: "StadiumTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -55,46 +60,10 @@ class StadiumListViewController: UIViewController {
         navigationItem.titleView?.addGestureRecognizer(navBarTapGesture)
         navigationItem.titleView?.isUserInteractionEnabled = true
     }
-
-
+    
     // MARK: - Actions
-
-    @objc  func titleViewTapped() {
+    
+    @objc private func titleViewTapped() {
         tableView.setContentOffset(CGPoint.zero, animated: true)
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension StadiumListViewController: UITableViewDelegate {
-
-      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          let storyboard = UIStoryboard(name: "Main", bundle: nil)
-          let stadiumDetailsVC = storyboard.instantiateViewController(withIdentifier: "StadiumDetailsViewController") as! StadiumDetailsViewController
-          stadiumDetailsVC.stadium = stadiums[indexPath.row]
-          navigationController?.pushViewController(stadiumDetailsVC, animated: true)
-      }
-
-      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-          return 92.0
-      }
-}
-
-// MARK: - UITableViewDataSource
-
-extension StadiumListViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stadiums.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StadiumTableViewCell", for: indexPath) as? StadiumTableViewCell else {
-            fatalError("Failed to dequeue StadiumTableViewCell.")
-        }
-        
-        cell.stadium = stadiums[indexPath.row]
-        
-        return cell
     }
 }
