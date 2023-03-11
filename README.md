@@ -8,34 +8,25 @@
 
 Stadiums is an iOS app that lets users explore a list of touristic stadiums with ease. The app fetches a list of stadiums from a website and displays them as a list. It also has the following features:
 
-- ✅: Implement a detailed view that displays more information about the selected stadium
-- ✅: Detailed view when clicking on a stadium
 - ✅: Implement search and filter functionality for the stadium list
-- ✅: Search bar for filtering stadiums
 - ✅: Asynchronous image and list loading
 - ✅: Uses Core Data to persist the stadium data fetched from the API
 - ✅: Implement a development pattern (**we are using MVVM here**)
-
-## Features
-
-The app includes some additional features not asked for in the task:
-
-* Navigation controller for pushing and popping viewcontrollers cleanly
-* Swipe left to go back gestures
-* Click on navigation title to scroll to the top of the list
-* Functioning real time filtering with cancel button
+- ✅: Functioning real-time filtering with cancel button
+- ✅: Swipe left to go back gestures
+- ✅: Click on navigation title to scroll to the top of the list
+- ✅: Button to open the selected stadium on Apple Maps
 
 ## Roadmap
 
 The following are the items in the roadmap for this project:
 
 - ⏳: Write unit tests for the app (Optional)
-- ✅: Implement a detailed view that displays more information about the selected stadium
 - ✅: Improve UI/UX for better user experience 
 - ✅: Fetch the list of stadiums from https://sergiocasero.es/pois.json
 - ✅: Store the fetched data using Core Data for persistent storage
 - ✅: Display the list of stadiums in the app
-- ✅: Implement search and filter functionality for the stadium list 
+
 ## Requirements
 
 The following are the requirements for this project:
