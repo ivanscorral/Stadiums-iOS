@@ -22,17 +22,15 @@ class UIUtils {
         navigationController.navigationBar.compactAppearance = appearance
         navigationController.navigationBar.scrollEdgeAppearance = appearance
         
-        let titleItem = UINavigationItem(title: "Stadiums")
-        titleItem.largeTitleDisplayMode = .always
-        navigationController.navigationBar.items = [titleItem]
+        // Remove these lines; don't modify the navigation bar items directly.
+        // let titleItem = UINavigationItem(title: "Stadiums")
+        // titleItem.largeTitleDisplayMode = .always
+        // navigationController.navigationBar.items = [titleItem]
     }
     
-    static func updateTitleText(_ navigationController: UINavigationController?, withText text: String) {
-        guard let navigationController = navigationController else { return }
-        guard let titleItem = navigationController.navigationBar.items?.first else { return }
-        
-        titleItem.title = text
+    static func updateTitleText(_ viewController: UIViewController?, withText text: String) {
+        // Modify the `navigationItem` of the `viewController` instead of the `navigationController`.
+        guard let viewController = viewController else { return }
+        viewController.navigationItem.title = text
     }
 }
-
-
